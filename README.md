@@ -1,7 +1,6 @@
 # Notes App — Full-Stack CRUD Application
 
 **Live App:** https://notes-app-fullstack-zeta.vercel.app
-**Live API:** https://notes-app-fullstack-ymed.onrender.com/api/notes
 
 ---
 
