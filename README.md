@@ -1,4 +1,4 @@
-# Notes App — Full-Stack CRUD Application
+# Notes App : Full-Stack CRUD Application
 
 **Live App:** https://notes-app-fullstack-zeta.vercel.app
 
