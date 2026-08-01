@@ -18,7 +18,7 @@ import com.notesapp.notesapp.service.NoteService;
 
 @RestController
 @RequestMapping("/api/notes")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {"http://localhost:5173", "https://notes-app-fullstack-zeta.vercel.app"})
 public class NoteController {
 
 	@Autowired
