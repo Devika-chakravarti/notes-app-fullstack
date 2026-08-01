@@ -168,8 +168,7 @@ function App() {
                       year: 'numeric',
                     })}
                   </p>
-                  <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <button
+                      <div className="flex gap-2 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">                    <button
                       onClick={() => handleEdit(note)}
                       className="text-xs font-medium text-indigo-400 hover:text-indigo-300 transition-colors"
                     >
