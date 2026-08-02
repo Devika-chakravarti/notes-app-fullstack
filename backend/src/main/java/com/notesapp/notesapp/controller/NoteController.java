@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.notesapp.notesapp.entity.Note;
 import com.notesapp.notesapp.service.NoteService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/notes")
@@ -26,8 +27,8 @@ public class NoteController {
 
 	// CREATE - Add a new note
 	@PostMapping
-	public Note createNote(@RequestBody Note note) {
-		return noteService.createNote(note);
+	public Note createNote(@Valid @RequestBody Note note) {
+	    return noteService.createNote(note);
 	}
 
 	// READ - Get all notes
@@ -44,8 +45,8 @@ public class NoteController {
 
 	// UPDATE - Update an existing note
 	@PutMapping("/{id}")
-	public Note updateNote(@PathVariable Long id, @RequestBody Note note) {
-		return noteService.updateNote(id, note);
+	public Note updateNote(@PathVariable Long id, @Valid @RequestBody Note note) {
+	    return noteService.updateNote(id, note);
 	}
 
 	// DELETE - Delete a note
