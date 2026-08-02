@@ -3,7 +3,9 @@
 A full-stack note-taking web application built with **Spring Boot**, **React**, and **MySQL** — designed as a complete, production-deployed project rather than a "runs on localhost" demo. This was built as part of my project-based learning journey toward becoming a **Java Full Stack Developer (Spring Boot + React)**.
 
 **🔗 Live App:** [notes-app-fullstack-zeta.vercel.app](https://notes-app-fullstack-zeta.vercel.app)
+ 
 **🔗 Backend API:** Hosted on Render (Dockerized Spring Boot service)
+ 
 **🔗 Database:** Managed MySQL on Aiven
 
 ---
