@@ -1,16 +1,55 @@
-# React + Vite
+# Notes App — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, dark-themed single-page application for creating, editing, and deleting notes — built with React and Tailwind CSS, connected to a Spring Boot REST API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- View all notes in a responsive card grid (single column on mobile, multi-column on desktop)
+- Create a new note via a simple title + content form
+- Edit an existing note — clicking "Edit" pre-fills the form for quick updates
+- Delete a note, with a confirmation prompt to prevent accidental deletion
+- Frontend form validation — the "Add Note" button stays disabled until both fields are filled
+- Dark, glassmorphic UI — layered translucent cards with soft background glows
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19 (Vite)** — component-based UI, fast dev/build tooling
+- **Tailwind CSS v4** — utility-first styling, no separate CSS files
+- **Axios** — handles all HTTP requests to the backend API
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Make sure the backend is running (see backend README)
+4. Start the dev server:
+   ```
+   npm run dev
+   ```
+5. Open `http://localhost:5173`
+
+## Project Structure
+
+```
+src/
+├── App.jsx       → entire UI + CRUD logic
+├── main.jsx      → React entry point
+└── index.css     → Tailwind import
+```
+
+## Environment
+
+By default, the app expects the backend API at `http://localhost:8080/api/notes`. In production, this should be read from an environment variable (`import.meta.env.VITE_API_URL`) rather than hardcoded — see Known Limitations in the backend README.
+
+## Deployment
+
+Hosted on **Vercel**, which auto-deploys on every push to `main` — Vercel detects the Vite project automatically and builds via `npm run build`.
+
+## Known Limitations
+
+- API base URL is currently hardcoded rather than environment-driven.
+- All CRUD logic and UI currently live in a single `App.jsx` file rather than being split into smaller components — fine at this scale, but would need restructuring for a larger feature set.
+- No loading skeletons — a brief blank state can appear while notes are being fetched.
